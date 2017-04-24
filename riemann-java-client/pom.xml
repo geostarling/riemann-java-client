@@ -2,14 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <artifactId>riemann-java-client</artifactId>
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <artifactId>riemann-java-client-parent</artifactId>
         <groupId>io.riemann</groupId>
         <version>0.4.2</version>
     </parent>
+
+    <artifactId>riemann-java-client</artifactId>
+    <packaging>bundle</packaging>
 
     <dependencies>
         <dependency>
@@ -41,7 +42,7 @@
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty</artifactId>
-            <version>3.6.1.Final</version>
+            <version>3.6.4.Final</version>
         </dependency>
 
     </dependencies>
@@ -68,6 +69,21 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>3.0.1</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>
+                            io.riemann.riemann;-noimport:=true,
+                            io.riemann.riemann.client;-noimport:=true
+                        </Export-Package>
+                    </instructions>
+                </configuration>
             </plugin>
         </plugins>
     </build>

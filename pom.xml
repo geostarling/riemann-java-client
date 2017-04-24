@@ -96,30 +96,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <version>3.0.1</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Export-Package>
-                            io.riemann.riemann;-noimport:=true,
-                            io.riemann.riemann.client;-noimport:=true,
-                            com.codahale.metrics.riemann;-noimport:=true,
-                            com.yammer.metrics.reporting;-noimport:=true
-                        </Export-Package>
-                        <Import-Package>
-                            com.codahale.metrics;version="[3.0,4)";resolution:="optional",
-                            com.yammer.metrics;resolution:="optional",
-                            com.yammer.metrics.core;resolution:="optional",
-                            com.yammer.metrics.stats;resolution:="optional",
-                            *
-                        </Import-Package>
-                    </instructions>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
