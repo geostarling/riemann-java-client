@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.riemann</groupId>
     <artifactId>riemann-java-client-parent</artifactId>
-    <version>0.4.2</version>
+    <version>0.4.5</version>
     <modules>
         <module>riemann-java-client</module>
         <module>metrics2-riemann-reporter</module>
@@ -12,13 +12,20 @@
     </modules>
     <packaging>pom</packaging>
     <name>Riemann Java Client</name>
-    <description>Java client for http://aphyr.github.com/riemann/</description>
+    <description>Java client for http://riemann.io/</description>
     <url>/</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
+         
+    <licenses>
+      <license>
+        <name>Apache-2.0</name>
+        <url>https://choosealicense.com/licenses/apache-2.0/</url>
+      </license>
+    </licenses>
 
     <dependencies>
         <!-- TEST DEP's -->
